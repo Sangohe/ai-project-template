@@ -1,12 +1,11 @@
 program: src/train.py
-method: bayes  # You can also use 'grid' or 'random'
+method: grid  # You can also use 'grid' or 'random'
 metric:
   name: loss
   goal: minimize
 parameters:
   learning_rate:
-    min: 0.00001
-    max: 0.001
+    values: [0.001, 0.0001, 0.00001]
   batch_size:
     values: [16, 32, 64]
   epochs:
